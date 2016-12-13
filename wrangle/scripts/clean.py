@@ -54,7 +54,6 @@ def clean_row(row):
         except ValueError as err:
             x[cx] = None
 
-
     # Now try to split the Location 1 value into latitude/longitude
     _mtch = search(r'\((.+?), (.+?)\)', row['Point'])
     if _mtch:
@@ -62,7 +61,6 @@ def clean_row(row):
         x['latitude'], x['longitude'] = [round(float(z), 6) for z in _mtch.groups()]
     else:
         x['latitude'] = x['longitude'] = None
-
     return x
 
 
